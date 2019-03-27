@@ -1,0 +1,27 @@
+{
+  "name": "expressjs-basics",
+  "version": "1.0.0",
+  "description": "basics of ExpressJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RafalPijet/ExpressJS-basics.git"
+  },
+  "keywords": [
+    "node",
+    "expressjs"
+  ],
+  "author": "LopezPL",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RafalPijet/ExpressJS-basics/issues"
+  },
+  "homepage": "https://github.com/RafalPijet/ExpressJS-basics#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4"
+  }
+}
