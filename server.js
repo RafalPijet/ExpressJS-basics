@@ -6,7 +6,6 @@ var stringifyFile;
 
 app.use(bodyParser.json());
 
-
 app.get('/getNote', function (req, res) {
     fs.readFile('./test.json', 'utf8', function (err, data) {
 
@@ -16,13 +15,19 @@ app.get('/getNote', function (req, res) {
     });
 });
 
-app.post('/getNote/:note', function (req, res) {
-    stringifyFile += '\n' + req.params.note;
-    fs.writeFile('./test.json', stringifyFile, function (err) {
 
+app.post('/getNote/:note', function (req, res) {
+    fs.readFile('./test.json', 'utf8', function (err, data) {
+        
         if (err) throw err;
-        console.log('file updated');
-        res.send(stringifyFile);
+        stringifyFile = data;
+        stringifyFile += '\n' + req.params.note;
+        fs.writeFile('./test.json', stringifyFile, function (err) {
+
+            if (err) throw err;
+            console.log('file updated');
+            res.send(stringifyFile);
+        })
     })
 });
 
